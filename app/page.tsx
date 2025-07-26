@@ -9,7 +9,7 @@ export default async function Page() {
         <h1>Welcome, {session.user.name}</h1>
         <p>Email: {session.user.email}</p>
         <img
-          src={session.user.image}
+          src={session.user.image ?? undefined}
           alt={`${session.user.name}'s avatar`}
           style={{ borderRadius: '50%', width: '75px', height: '75px' }}
         />
