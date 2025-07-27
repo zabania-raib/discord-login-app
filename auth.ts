@@ -6,7 +6,7 @@ import { PrismaClient } from "@prisma/client"
 const client = new PrismaClient()
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
-  debug: true, // <--- ADD THIS LINE
+  debug: !!process.env.AUTH_DEBUG, // <-- USE THIS NEW LINE
   trustHost: true,
   adapter: PrismaAdapter(client),
   providers: [
